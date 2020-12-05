@@ -51,8 +51,7 @@ while play:
     else:
         print('Invalid input.')
         continue
-    print(n)
-    print(val)
+    
     print('Wins: ' + str(d['Wins']))
     print('Losses: ' + str(d['Losses']))
 
