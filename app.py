@@ -13,8 +13,8 @@ CORS(app)
 
 @app.route("/")
 def welcome():
-    return (
-        f"Welcome!<br/>")
+    data = "Roshambo!"
+    return data
 
 if __name__ == '__main__':
     app.run()
