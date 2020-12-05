@@ -1,6 +1,14 @@
+d = {'Wins': 0, 'Losses': 0}
 play = True
-while True:
-    val = input('Rock, Paper, or Scissors? ')
+while play:
+    while True:
+        val = input('Rock, Paper, or Scissors? ').capitalize()
+        if val == 'Rock' or val == 'Paper' or val == 'Scissors':
+            break
+        else:
+            print('Invalid input.')
+            continue
+
     import random
     n = random.randint(1,3)
     if n == 1:
@@ -15,26 +23,46 @@ while True:
 
     if val == 'Rock' and n == 2:
         print('Sorry, you lose.')
+        d['Losses'] += 1
     elif val == 'Rock' and n == 1:
         print('Draw, play again.')
     elif val == 'Rock' and n == 3:
         print('You win!')
+        d['Wins'] += 1
     elif val == 'Paper' and n == 1:
         print('You win!')
+        d['Wins'] += 1
     elif val == 'Paper' and n == 2:
         print('Draw, play again.')
     elif val == 'Paper' and n == 3:
         print('Sorry, you lose.')
+        d['Losses'] += 1
     elif val == 'Scissors' and n == 1:
         print('Sorry, you lose.')
+        d['Losses'] += 1
     elif val == 'Scissors' and n == 2:
         print('You win!')
-    elif val == 'Paper' and n == 3:
+        d['Wins'] += 1
+    elif val == 'Scissors' and n == 3:
         print('Draw, play again')
-        
-    time.sleep(1)
-    again = input('Do you want to play again? (Y/N) ')
-    if again == "N":
-        play = False
-    if again == 'Y':
+    else:
+        print('Invalid input.')
         continue
+    print(n)
+    print(val)
+    print('Wins: ' + str(d['Wins']))
+    print('Losses: ' + str(d['Losses']))
+
+
+    time.sleep(1)
+    end = True
+    while end:
+        again = input('Do you want to play again? (Y/N) ').capitalize()
+        if again == "N":
+            print('Thanks for playing!')
+            play = False
+            quit()
+        elif again == 'Y':
+            end = False
+        else:
+            continue
