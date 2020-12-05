@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 from roshambo_app import runGame
 #################################################
@@ -15,8 +15,9 @@ CORS(app)
 def welcome():
     data = "Welcome to Roshambo!"
     return data
-@app.route("/<input>")    
+@app.route("/game", methods=['POST'])
 def game(input="None"):
-    return runGame(input)
+    if request.method == 'POST':
+        return str(runGame(request.json.get('data')))
 if __name__ == '__main__':
     app.run()

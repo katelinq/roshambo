@@ -1,3 +1,6 @@
+# Katelin Quarles
+# 12/05/2020
+
 d = {'Wins': 0, 'Losses': 0}
 play = True
 while play:
