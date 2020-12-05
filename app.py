@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-
+from roshambo_app import runGame
 #################################################
 # Flask Setup
 #################################################
@@ -13,8 +13,10 @@ CORS(app)
 
 @app.route("/")
 def welcome():
-    data = "Roshambo!"
+    data = "Welcome to Roshambo!"
     return data
-
+@app.route("/<input>")    
+def game(input="None"):
+    return runGame(input)
 if __name__ == '__main__':
     app.run()
