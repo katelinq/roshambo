@@ -1,3 +1,5 @@
+# Haylee Quarles (modified from Katelin Quarles)
+# 12/05/2020
 
 import random
 import time

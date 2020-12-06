@@ -1,3 +1,5 @@
+// Haylee Quarles
+// 12/05/2020
 const choices = {
     1: "Opponent chose Rock...",
     2: "Opponent chose Paper...",
