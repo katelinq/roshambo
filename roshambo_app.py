@@ -3,7 +3,11 @@ import random
 import time
 
 def runGame(data):
-    return game(data)
+    try:
+        return game(data)
+    except:
+        raise Exception
+
 
 # Sample data
 # data = {
@@ -18,7 +22,7 @@ def game(data):
 
     val = data['input'].capitalize()
     if val != 'Rock' and val != 'Paper' and val != 'Scissors':
-        raise Exception('Invalid input')
+        raise Exception
 
     n = random.randint(1,3)
     data['ai_choice'] = n
