@@ -36,7 +36,7 @@ function callGame() {
         var url = "https://katelinq-roshambo-api.herokuapp.com/game";
         var testUrl = "http://127.0.0.1:5000/game"
     
-        fetch(testUrl, {
+        fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
