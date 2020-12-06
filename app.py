@@ -18,6 +18,6 @@ def welcome():
 @app.route("/game", methods=['POST'])
 def game(input="None"):
     if request.method == 'POST':
-        return str(runGame(request.json.get('data')))
+        return runGame(request.json.get('data'))
 if __name__ == '__main__':
     app.run()

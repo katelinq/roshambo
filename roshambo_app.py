@@ -46,4 +46,4 @@ def game(data):
         data['wins'] += 1
     elif (data['outcome'] == 'lose'):
         data['losses'] += 1
-    return data
+    return {"data": data}
